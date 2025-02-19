@@ -116,6 +116,7 @@
 		<li>The "R-IDE" link column in the DevTools application page is now placed at the right border.</li> 
 		<li>The application's scope is now enforced when loading a form in the tab. E.g. this enables the creation of new sys_choice records for the task.state field in a table derived from task.</li>
 		<li>Creating application files now works properly if the user has switched to a different scope and then creates a new application file in R-IDE in a different tab.</li>
+		<li>The background script page is now loaded with top and side navigation.</li>
 	</ol>
 
 
@@ -146,13 +147,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-07 19:59:42</sys_updated_on>
+        <sys_updated_on>2025-02-19 23:08:20</sys_updated_on>
     </sys_ui_page>
 </record_update>
