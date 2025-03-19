@@ -111,6 +111,7 @@
 		<li>Reactor 1.12.0 is now required due to the new Columns and ToolStack components.</li>
 		<li>Improved layout for creating new Application Files.</li>
 		<li>Platform tools and documentation links are moved away from the tool bar to the side bar.</li>
+		<li>Added tool link to the "REST API Explorer" to the new side bar.</li>
 		<li>sys_security_acl, sys_user_role and sys_db_object are now in the usual suspects list and hence displayed as a short cut when creating a new Application File.</li>
 		<li>More (secondary) classes are hidden when creating new application files.</li>
 		<li>The "R-IDE" link column in the DevTools application page is now placed at the right border.</li> 
@@ -148,13 +149,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>43</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-24 12:49:06</sys_updated_on>
+        <sys_updated_on>2025-03-19 09:46:31</sys_updated_on>
     </sys_ui_page>
 </record_update>
