@@ -47,7 +47,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Washington,Xanadu',
+				'Xanadu,Yokohama',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -108,6 +108,8 @@
 
 	<h3>1.2.0 - TODO</h3>
 	<ol>
+		<li>Washington is no longer actively supported.</li>
+		<li>R-IDE is fully tested with Yokohama.</li>
 		<li>Reactor 1.12.0 is now required due to the new Columns and ToolStack components.</li>
 		<li>Improved layout for creating new Application Files.</li>
 		<li>Added tool button for the AppInstall Script Include.</li>
@@ -152,14 +154,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-04-11 09:30:45</sys_updated_on>
+        <sys_updated_on>2025-04-11 13:52:01</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
