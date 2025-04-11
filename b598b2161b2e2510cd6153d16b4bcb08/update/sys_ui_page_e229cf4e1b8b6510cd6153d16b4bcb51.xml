@@ -120,6 +120,7 @@
 		<li>Creating application files now works properly if the user has switched to a different scope and then creates a new application file in R-IDE in a different tab.</li>
 		<li>The background script page is now loaded with top and side navigation.</li>
 		<li>The "Commit Files" tab is now closed when the commit operations starts.</li>
+		<li>The "Script Name" is now used as the display name for UI Scripts (instead of the "API Name").</li>
 	</ol>
 
 
@@ -150,13 +151,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-19 09:55:52</sys_updated_on>
+        <sys_updated_on>2025-04-11 08:10:21</sys_updated_on>
     </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-11 08:10:21</sys_created_on>
+        <sys_id>1fa1015293f06e10959b7fda2bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-11 08:10:21</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

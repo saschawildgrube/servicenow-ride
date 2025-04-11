@@ -7,7 +7,9 @@
         <client_callable>false</client_callable>
         <description>Returns an array of table names that contain "secondary" records. "Secondary" records are records which are part of a larger structure and always reference directly or indirectly to a primary record.&#13;
 E.g., the "sys_atf_test" is a primary record, the contained test steps in "sys_atf_test_step" are secondry records. </description>
+        <mobile_callable>false</mobile_callable>
         <name>GetSecondaryRecordTables</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetSecondaryRecordTables()
 {
 	var aSecondaryRecordTables = [
