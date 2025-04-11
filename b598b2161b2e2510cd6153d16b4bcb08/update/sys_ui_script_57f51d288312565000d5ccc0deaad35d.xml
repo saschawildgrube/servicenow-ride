@@ -22,9 +22,9 @@
         <sys_id>57f51d288312565000d5ccc0deaad35d</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>x_snc_ride.GetRideUrl</sys_name>
-        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_57f51d288312565000d5ccc0deaad35d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-12-02 16:52:03</sys_updated_on>

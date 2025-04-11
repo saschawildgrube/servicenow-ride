@@ -101,9 +101,9 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_id>03cee9261b03e510cd6153d16b4bcb21</sys_id>
         <sys_mod_count>30</sys_mod_count>
         <sys_name>RIDEClientAPI</sys_name>
-        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_03cee9261b03e510cd6153d16b4bcb21</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-12-25 20:13:23</sys_updated_on>
