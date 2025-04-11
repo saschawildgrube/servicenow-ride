@@ -12,9 +12,9 @@
         <sys_id>f34ccb021bcb6510cd6153d16b4bcb0c</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>Reactor</sys_name>
-        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>x_snc_devtools_dependency_f34ccb021bcb6510cd6153d16b4bcb0c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-02-07 19:59:59</sys_updated_on>

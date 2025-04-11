@@ -11,16 +11,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:07</sys_created_on>
         <sys_id>05194f4e1b8b6510cd6153d16b4bcbe1</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>x_snc_ride.logging.verbosity</sys_name>
-        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_properties_05194f4e1b8b6510cd6153d16b4bcbe1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-06 23:32:15</sys_updated_on>
+        <sys_updated_on>2025-04-11 15:33:29</sys_updated_on>
         <type>choicelist</type>
-        <value>debug</value>
+        <value>info</value>
         <write_roles/>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=05194f4e1b8b6510cd6153d16b4bcbe1"/>
