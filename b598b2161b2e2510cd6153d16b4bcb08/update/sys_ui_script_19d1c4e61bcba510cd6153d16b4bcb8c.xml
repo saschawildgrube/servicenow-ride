@@ -187,6 +187,17 @@
 			DoModalMessage(this.title,'The manual UI Page can no longer be found!',function(){});
 			return;
 		}	
+		if (strValue == 'appinstall')
+		{
+			var strAppInstall = GetValue(this.state.app_data,'appinstall');
+			if (IsValidSysId(strAppInstall))
+			{
+				this.openTab('sys_script_include,'+strAppInstall);
+				return;
+			}
+			DoModalMessage(this.title,'The AppInstall Script Include can no longer be found!',function(){});
+			return;
+		}			
 		if (strValue == 'testsuite')
 		{
 			var strTestSuite = GetValue(this.state.app_data,'default_test_suite');
@@ -608,6 +619,15 @@
 						value: 'manual'
 					});
 			}
+			if (IsValidSysId(appdata.appinstall) == true)
+			{
+				tools.push({
+						text: 'AppInstall',
+						tooltip: 'Open the AppInstall Script Include',
+						icon: 'angle-double-right',
+						value: 'appinstall'
+					});
+			}
 			if (IsValidSysId(appdata.default_test_suite) == true)
 			{
 				tools.push({
@@ -955,14 +975,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>350</sys_mod_count>
+        <sys_mod_count>352</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-03-19 09:55:04</sys_updated_on>
+        <sys_updated_on>2025-04-11 09:27:18</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>
