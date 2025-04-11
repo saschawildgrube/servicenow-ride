@@ -16,7 +16,7 @@
 	
 	<p>Welcome to R-IDE - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
 
-	<h2>Overview</h2> 
+	<h2>Overview</h2>  
 	<g2:no_escape>$[
 		docapi.RenderDescription();
 	]</g2:no_escape>
@@ -47,7 +47,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Washington,Xanadu',
+				'Xanadu,Yokohama',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -106,6 +106,28 @@
 	
 	<h2>Release Notes</h2>
 
+	<h3>1.2.0 - 2025-04-11</h3>
+	<ol>
+		<li>Washington is no longer actively supported.</li>
+		<li>R-IDE is fully tested with Yokohama.</li>
+		<li>DevTools 1.119.0 is now required.</li>
+		<li>Reactor 1.12.0 is now required due to the new Columns and ToolStack components.</li>
+		<li>Improved layout for creating new Application Files.</li>
+		<li>Added tool button for the AppInstall Script Include.</li>
+		<li>Platform tools and documentation links are moved away from the tool bar to the side bar.</li>
+		<li>Added tool link to the "REST API Explorer" to the new side bar.</li>
+		<li>Added tool link to the "DevTools Link Directory" to the new side bar.</li>
+		<li>sys_security_acl, sys_user_role and sys_db_object are now in the usual suspects list and hence displayed as a short cut when creating a new Application File.</li>
+		<li>More (secondary) classes are hidden when creating new application files.</li>
+		<li>The "R-IDE" link column in the DevTools application page is now placed at the right border.</li> 
+		<li>The application's scope is now enforced when loading a form in the tab. E.g. this enables the creation of new sys_choice records for the task.state field in a table derived from task.</li> 
+		<li>Creating application files now works properly if the user has switched to a different scope and then creates a new application file in R-IDE in a different tab.</li>
+		<li>The background script page is now loaded with top and side navigation.</li>
+		<li>The "Commit Files" tab is now closed when the commit operations starts.</li>
+		<li>The "Script Name" is now used as the display name for UI Scripts (instead of the "API Name").</li>
+	</ol>
+
+
 	<h3>1.1.0 - 2024-12-26</h3>
 	<ol>
 		<li>DevTools 1.109.0 is now required.</li>
@@ -133,13 +155,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-26 12:44:35</sys_updated_on>
+        <sys_updated_on>2025-04-11 15:27:08</sys_updated_on>
     </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-11 08:10:21</sys_created_on>
+        <sys_id>1fa1015293f06e10959b7fda2bba10ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-11 08:10:21</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

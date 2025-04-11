@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_reactor_component">
     <x_snc_reactor_component action="INSERT_OR_UPDATE">
         <content_css/>
-        <dependencies>acf063451b1469905b76777d8b4bcbb2,9191395fdbd21510f359c191159619ef,9861d5311bd7e110cd6153d16b4bcb73,1fb0773edb92d110f359c1911596194d,8572ee00971fed10a6a07767f053af21</dependencies>
+        <dependencies>acf063451b1469905b76777d8b4bcbb2,9191395fdbd21510f359c191159619ef,9861d5311bd7e110cd6153d16b4bcb73,1fb0773edb92d110f359c1911596194d,8572ee00971fed10a6a07767f053af21,d252dcf7c3bad2105a37f90705013106</dependencies>
         <description>Allows to create new application files.</description>
         <jsx>false</jsx>
         <module>false</module>
@@ -272,14 +272,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-10 21:09:31</sys_created_on>
         <sys_id>e622c12d8375da1000d5ccc0deaad39d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>RIDECreateFileController</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>x_snc_reactor_component_e622c12d8375da1000d5ccc0deaad39d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-25 18:59:11</sys_updated_on>
+        <sys_updated_on>2025-01-06 10:50:20</sys_updated_on>
         <type>script</type>
         <ui_script display_value="x_snc_ride.RIDECreateFileController">347f3ce18375da1000d5ccc0deaad3f9</ui_script>
         <url/>

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns an object representing the given application including an array of objects representing the sys_metadata records.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetAppFileClasses</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetAppFileClasses()
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;

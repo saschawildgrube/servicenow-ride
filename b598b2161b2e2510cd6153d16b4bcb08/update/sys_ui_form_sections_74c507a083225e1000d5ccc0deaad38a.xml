@@ -10,7 +10,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="NULL" display_value="" name="wf_variable" sys_domain="global" view="Default view">8dc507a083225e1000d5ccc0deaad3ce</sys_ui_section>
+            <sys_ui_section display_value="">8dc507a083225e1000d5ccc0deaad3ce</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>
@@ -24,7 +24,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Question" display_value="Question" name="wf_variable" sys_domain="global" view="Default view">3cc507a083225e1000d5ccc0deaad394</sys_ui_section>
+            <sys_ui_section display_value="">3cc507a083225e1000d5ccc0deaad394</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:48</sys_updated_on>
         </sys_ui_form_section>
@@ -38,7 +38,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Annotation" display_value="Annotation" name="wf_variable" sys_domain="global" view="Default view">85c507a083225e1000d5ccc0deaad3d9</sys_ui_section>
+            <sys_ui_section display_value="">85c507a083225e1000d5ccc0deaad3d9</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>
@@ -52,7 +52,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Type Specifications" display_value="Type Specifications" name="wf_variable" sys_domain="global" view="Default view">49c507a083225e1000d5ccc0deaad3b7</sys_ui_section>
+            <sys_ui_section display_value="">49c507a083225e1000d5ccc0deaad3b7</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>
@@ -66,7 +66,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Default Value" display_value="Default Value" name="wf_variable" sys_domain="global" view="Default view">70c507a083225e1000d5ccc0deaad39b</sys_ui_section>
+            <sys_ui_section display_value="">70c507a083225e1000d5ccc0deaad39b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>
@@ -80,7 +80,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Auto-populate" display_value="Auto-populate" name="wf_variable" sys_domain="global" view="Default view">49c507a083225e1000d5ccc0deaad39f</sys_ui_section>
+            <sys_ui_section display_value="">49c507a083225e1000d5ccc0deaad39f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>
@@ -94,7 +94,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Permission" display_value="Permission" name="wf_variable" sys_domain="global" view="Default view">fcc507a083225e1000d5ccc0deaad38d</sys_ui_section>
+            <sys_ui_section display_value="">fcc507a083225e1000d5ccc0deaad38d</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:48</sys_updated_on>
         </sys_ui_form_section>
@@ -108,7 +108,7 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="wf_variable" name="wf_variable" sys_domain="global" view="Default view">74c507a083225e1000d5ccc0deaad38a</sys_ui_form>
-            <sys_ui_section caption="Availability" display_value="Availability" name="wf_variable" sys_domain="global" view="Default view">c5c507a083225e1000d5ccc0deaad3b0</sys_ui_section>
+            <sys_ui_section display_value="">c5c507a083225e1000d5ccc0deaad3b0</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2024-12-15 10:56:49</sys_updated_on>
         </sys_ui_form_section>

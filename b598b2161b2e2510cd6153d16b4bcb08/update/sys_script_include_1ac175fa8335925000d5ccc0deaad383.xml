@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns and array of table names that are (configured) to be always offered in a short list when creating a new application file.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetUsualSuspectsClasses</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetUsualSuspectsClasses()
 {
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
@@ -18,10 +20,14 @@
 		return aUsualSuspects;
 	}
 	var aUsualSuspects = [
+		'sys_db_object',
+		'sys_properties',
 		'sys_script_include',
 		'sys_script',
+		'sys_security_acl',
 		'sys_ui_action',
-		'sys_ui_script'
+		'sys_ui_script',
+		'sys_user_role',
 		];
 	return aUsualSuspects;
 }]]></script>
@@ -29,13 +35,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-14 21:49:09</sys_created_on>
         <sys_id>1ac175fa8335925000d5ccc0deaad383</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>GetUsualSuspectsClasses</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_1ac175fa8335925000d5ccc0deaad383</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-13 13:42:21</sys_updated_on>
+        <sys_updated_on>2025-01-28 12:22:01</sys_updated_on>
     </sys_script_include>
 </record_update>

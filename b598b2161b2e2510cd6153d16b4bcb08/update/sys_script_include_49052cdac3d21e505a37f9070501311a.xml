@@ -9,7 +9,9 @@
 separate_browser_tab: Indicates that the record must be edited in a separate browser tab&#13;
 url: Specified the url for the special GUI to be used to edit this record&#13;
 base_table: marks classes that only serve as base classes for other records and hence should not be used directly to create new records</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetClassAttributes</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetClassAttributes()
 {
 	var attributes = {};

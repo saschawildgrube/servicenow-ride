@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
     <sys_ui_script action="INSERT_OR_UPDATE">
         <active>true</active>
-        <description>Allows to select an existing apps or to create a new one.</description>
+        <description>Allows to create a new record.&#13;
+Note that the new record is created by loading a form with "sys_id=" (not "sys_id=-1") so that the scope of the current app can be set even if the current user scope is set to another scope.</description>
         <global>false</global>
         <ignore_in_now_experience>false</ignore_in_now_experience>
         <name>x_snc_ride.RIDECreateFileController</name>
@@ -113,8 +114,6 @@
 		if (strSelectClass != '')
 		{
 			var strContentUrl = '/'+strSelectClass+'.do?sys_id=&sysparm_query=sys_scope%3D'+strAppSysId;
-			//var strContentUrl = '/'+strSelectClass+'.do?sys_id=&sys_scope='+strAppSysId;
-
 			var iframe =  e(IFrame,
 				{
 					url: strContentUrl,
@@ -165,7 +164,7 @@
 				aRows.push(aCells);
 			}
 		}
-		var tableUsualSuspects = e(TableComponent,{ cells: aRows, classname: 'ride_app_selector' },null);
+		var tableUsualSuspects = e(TableComponent,{ cells: aRows, classname: 'ride' },null);
 
 
 		// All
@@ -186,8 +185,8 @@
 				},null);				
 
 		var aHeaders = [
-			{ content: componentFilterLabelInput },
-			{ content: componentFilterNameInput }
+			{ header: true, content: componentFilterLabelInput },
+			{ header: true, content: componentFilterNameInput }
 			];
 			
 		aRows.push(aHeaders);
@@ -255,14 +254,42 @@
 			}		
 
 		}
-		var tableAll = e(TableComponent,{ cells: aRows, classname: 'ride_app_selector' },null);
+		var tableAll = e(TableComponent,{ cells: aRows, classname: 'ride' },null);
 
 	
+		var componentColumns = e(Columns,
+			{
+				gap: 10,
+				columns:
+				[
+					{
+						content: e('div',
+							{
+								style:
+								{
+									maxHeight: '80vh', overflowY: 'auto'
+								}
+							},tableUsualSuspects)
+					},
+					{
+						width_factor: 2,
+						content: e('div',
+							{
+								style:
+								{
+									maxHeight: '80vh', overflowY: 'auto'
+								}
+							},tableAll)
+					}
+				]
+			})
+
+/*
 		var aComponents = [];
 		aComponents.push(e('div', { style: { maxHeight: '80vh', overflowY: 'auto', float: 'left'}},tableUsualSuspects));
 		aComponents.push(e('div', { style: { maxHeight: '80vh', overflowY: 'auto', float: 'left' }},tableAll));
-		
-		return e('div', { style: { paddingTop: '10px' } },aComponents);
+*/		
+		return e('div', { style: { padding: '10px' } },componentColumns);
 	}	
 }]]></script>
         <script_name>RIDECreateFileController</script_name>
@@ -270,14 +297,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-10 20:56:49</sys_created_on>
         <sys_id>347f3ce18375da1000d5ccc0deaad3f9</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>x_snc_ride.RIDECreateFileController</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_347f3ce18375da1000d5ccc0deaad3f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 14:52:49</sys_updated_on>
+        <sys_updated_on>2025-02-07 18:31:59</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>

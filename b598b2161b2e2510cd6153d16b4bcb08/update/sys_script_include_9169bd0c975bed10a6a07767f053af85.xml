@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns an object representing the given application including an array of objects representing the sys_metadata records.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetAppData</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetAppData(vApp)
 {
 	var GetAppRecord = x_snc_devtools.GetAppRecord;
@@ -56,6 +58,7 @@
 		[
 			'sys_ui_action',
 			'sys_ui_policy',
+			'sysrule_view',
 			'sysevent_in_email_action'
 		],
 		name:
@@ -128,6 +131,11 @@
 			}
 			strDisplay = grRecord.name + ' - ' + grRecord.view.getDisplayValue() + strParent;
 		}
+		else if (strClassName == 'sys_ui_script')
+		{
+			var grRecord = GetRecord(strClassName,metadata.sys_id);
+			strDisplay = grRecord.getValue('script_name');
+		}		
 		else if (strClassName == 'sys_filter')
 		{
 			var grRecord = GetRecord(strClassName,metadata.sys_id);
@@ -159,6 +167,10 @@
 		{
 			appdata.manual = metadata.sys_id;
 		}
+		if (strClassName == 'sys_script_include' && metadata.sys_name == 'AppInstall')
+		{
+			appdata.appinstall = metadata.sys_id;
+		}		
 		if (strClassName == 'sys_atf_test_suite' && metadata.sys_name == appdata.name_clean)
 		{
 			appdata.default_test_suite = metadata.sys_id;
@@ -171,13 +183,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-03 10:19:49</sys_created_on>
         <sys_id>9169bd0c975bed10a6a07767f053af85</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>GetAppData</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_9169bd0c975bed10a6a07767f053af85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-13 13:42:22</sys_updated_on>
+        <sys_updated_on>2025-04-11 09:29:11</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>9169bd0c975bed10a6a07767f053af85</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-11 08:03:53</sys_created_on>
+        <sys_id>6c30059e93b06e10959b7fda2bba10e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-11 08:03:53</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

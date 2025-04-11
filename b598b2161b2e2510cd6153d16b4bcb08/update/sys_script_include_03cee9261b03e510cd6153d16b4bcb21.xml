@@ -15,7 +15,9 @@ Methods:
 * AppCreate()
 * SetUserState()
 * GetUserState()</description>
+        <mobile_callable>false</mobile_callable>
         <name>RIDEClientAPI</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var RIDEClientAPI = Class.create();
 RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 {

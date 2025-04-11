@@ -29,7 +29,8 @@
 			filter: '',
 			currenttab: strCurrentTab,
 			tabs: aTabs,
-			uncommittedfiles: null
+			uncommittedfiles: null,
+			sidebar_icononly: false
 		};
 
 		this.title = 'R-IDE';
@@ -186,6 +187,17 @@
 			DoModalMessage(this.title,'The manual UI Page can no longer be found!',function(){});
 			return;
 		}	
+		if (strValue == 'appinstall')
+		{
+			var strAppInstall = GetValue(this.state.app_data,'appinstall');
+			if (IsValidSysId(strAppInstall))
+			{
+				this.openTab('sys_script_include,'+strAppInstall);
+				return;
+			}
+			DoModalMessage(this.title,'The AppInstall Script Include can no longer be found!',function(){});
+			return;
+		}			
 		if (strValue == 'testsuite')
 		{
 			var strTestSuite = GetValue(this.state.app_data,'default_test_suite');
@@ -234,7 +246,7 @@
 		}								
 		if (strValue == 'backgroundscript')
 		{
-			RedirectToUrl('/sys.scripts.modern.do',true);
+			RedirectToUrl('/now/nav/ui/classic/params/target/sys.scripts.modern.do',true);
 			return;
 		}			
 		if (strValue == 'clear_cache')
@@ -259,7 +271,17 @@
 		{
 			RedirectToUrl('/now/access-analyzer/home',true);
 			return;
-		}					
+		}		
+		if (strValue == 'rest_api_explorer')
+		{
+			RedirectToUrl('/now/nav/ui/classic/params/target/%24restapi.do',true);
+			return;
+		}			
+		if (strValue == 'link_directory')
+		{
+			RedirectToUrl('/now/nav/ui/classic/params/target/x_snc_devtools_links.do',true);
+			return;
+		}						
 		if (strValue == 'docs_apiref')
 		{
 			RedirectToUrl('https://developer.servicenow.com/dev.do#!/reference/',true);
@@ -280,7 +302,25 @@
 				});			
 			return;
 		}*/
-		DoModalMessage(this.title,'TODO: Not supported toolbar icon...',function(){});
+
+		if (strValue == 'sidebar_icononly_false')
+		{
+			this.setState(
+				{
+					sidebar_icononly: false
+				});			
+			return;
+		}	
+		if (strValue == 'sidebar_icononly_true')
+		{
+			this.setState(
+				{
+					sidebar_icononly: true
+				});			
+			return;
+		}	
+
+		DoModalMessage(this.title,'ERROR: Tool not supported!',function(){});
 
 	}
 	
@@ -426,9 +466,18 @@
 			});
 	}
 
-	onTabNavigation(strUrl)
+	onTabNavigation(strUrl,strName)
 	{
-		//DoModalMessage('',strUrl);
+		if (strUrl.indexOf('ride_scope=') == -1)
+		{
+			strUrl += '&ride_scope=' + this.state.app_sys_id;
+			var elements = document.getElementsByName(strName);
+			var element = GetValue(elements,0);
+			if (element)
+			{
+				element.src = strUrl;
+			}
+		}
 	}
 
 	onCreateFileComplete(record)
@@ -447,6 +496,11 @@
 		this.updateUserState(
 			strTab,
 			aTabs);	
+	}
+
+	onCommitStart()
+	{
+		this.closeTab('repo_commit');
 	}
 
 	onButtonOpenInNewBrowserTab(strValue)
@@ -547,14 +601,14 @@
 					icon: 'plus-circle',
 					value: 'file_create'
 				});
-
+/*
 			tools.push({
 					text: '',
 					tooltip: 'Code Search (via Studio)',
 					icon: 'search',
 					value: 'search'
 				});				
-			
+*/			
 			// Special Application Files
 			if (IsValidSysId(appdata.manual) == true)
 			{
@@ -563,6 +617,15 @@
 						tooltip: 'Open the application manual UI Page',
 						icon: 'file-o',
 						value: 'manual'
+					});
+			}
+			if (IsValidSysId(appdata.appinstall) == true)
+			{
+				tools.push({
+						text: 'AppInstall',
+						tooltip: 'Open the AppInstall Script Include',
+						icon: 'angle-double-right',
+						value: 'appinstall'
 					});
 			}
 			if (IsValidSysId(appdata.default_test_suite) == true)
@@ -629,56 +692,10 @@
 					});									
 			}
 
-			// Platform Tools
-			tools.push({
-					text: 'Background Script',
-					tooltip: 'Execute background scripts',
-					icon: 'code',
-					value: 'backgroundscript'
-				});
-			tools.push({
-					text: 'Clear Cache',
-					tooltip: 'Clear the cache',
-					icon: 'shower',
-					value: 'clear_cache'
-				});		
-			tools.push({
-					text: 'Active Transactions',
-					tooltip: 'Show all active transactions on all nodes of the instance',
-					icon: 'tasks',
-					value: 'transactions'
-				});						
-			tools.push({
-					text: 'Access Analyzer',
-					tooltip: 'Analyse access based on users, groups and roles to various assets',
-					icon: 'ban',
-					value: 'access_analyzer'
-				});		
-
-			// Documentation
-			tools.push({
-					text: '',
-					tooltip: 'ServiceNow Glide API documentation',
-					icon: 'user-circle',
-					value: 'docs_apiref'
-				});			
-			tools.push({
-					text: '',
-					tooltip: 'Fontawesome 4.0 documentation',
-					icon: 'font-awesome',
-					value: 'docs_fontawesome'
-				});
 
 			var toolbar = e(ToolBar, { tools: tools, callbackOnClick: this.onToolBar });
 			
 			// Leftbar header
-			/*
-			var leftbarheader = e('input',
-				{
-					onInput: this.onInputFilter,
-					value: this.state.filter
-				});
-			*/
 			var leftbarheader = e(FilterInput,
 				{
 					callbackOnChange: this.onChangeFilter,
@@ -724,7 +741,8 @@
 					label = 'Commit Files';
 					tabcontent = e(RIDECommitController,
 						{
-							app_sys_id: strAppSysId
+							app_sys_id: strAppSysId,
+							callbackCommitStart: this.onCommitStart,
 						});
 				}			
 				else
@@ -732,7 +750,10 @@
 					var aValue = strTab.split(',');
 					var strClassName = GetValue(aValue,0);
 					var strSysId = GetValue(aValue,1);
-					var strContentUrl = '/'+strClassName+'.do?sys_id='+strSysId;
+					var strContentUrl = 
+						'/'+strClassName+'.do'
+						+'?sys_id='+strSysId
+						+'&ride_scope='+strAppSysId;
 
 					label = strClassName + ' - ' + strSysId;
 					
@@ -780,8 +801,9 @@
 					{
 						var iframe = e(IFrame,
 							{
+								name: strTab,
 								url: strContentUrl,
-								callbackOnLoad: this.onTabNavigation
+								callbackOnLoad: this.onTabNavigation,
 							});
 						tabcontent = iframe;
 					}
@@ -822,6 +844,113 @@
 			}
 			var status = e('span',{},strStatus);
 
+			// Side Bar
+			var tools = [];
+
+			// Icon Only Toggle
+			if (this.state.sidebar_icononly == true)
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Display tool text labels',
+						icon: 'chevron-left',
+						value: 'sidebar_icononly_false'
+				});		
+			}
+			else
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Hide tool text labels',
+						icon: 'chevron-right',
+						value: 'sidebar_icononly_true'
+				});		
+			}
+			var toolbar_icononly = e(ToolBar,
+				{
+					tools: tools,
+					callbackOnClick: this.onToolBar,
+				});			
+
+			var tools = [];
+
+			// Search
+			tools.push({
+					text: 'Code Search',
+					tooltip: 'Code Search (via Studio)',
+					icon: 'search',
+					value: 'search'
+				});				
+
+			// Platform Tools
+			tools.push({
+					text: 'Background Script',
+					tooltip: 'Execute background scripts',
+					icon: 'code',
+					value: 'backgroundscript'
+				});
+			tools.push({
+					text: 'Clear Cache',
+					tooltip: 'Clear the cache',
+					icon: 'shower',
+					value: 'clear_cache'
+				});		
+			tools.push({
+					text: 'Active Transactions',
+					tooltip: 'Show all active transactions on all nodes of the instance',
+					icon: 'tasks',
+					value: 'transactions'
+				});						
+			tools.push({
+					text: 'Access Analyzer',
+					tooltip: 'Analyse access based on users, groups and roles to various assets',
+					icon: 'ban',
+					value: 'access_analyzer'
+				});	
+			tools.push({
+					text: 'REST API Explorer',
+					tooltip: 'Navigate available REST API endpoints on the instance',
+					icon: 'exchange',
+					value: 'rest_api_explorer'
+				});			
+			tools.push({
+					text: 'Link Directory',
+					tooltip: 'The DevTools link directory',
+					icon: 'external-link-square',
+					value: 'link_directory'
+				});										
+
+			// Documentation
+			tools.push({
+					text: 'Reference',
+					tooltip: 'ServiceNow Developer Reference documentation',
+					icon: 'user-circle',
+					value: 'docs_apiref'
+				});			
+			tools.push({
+					text: 'Fontawesome',
+					tooltip: 'Fontawesome 4.0 documentation',
+					icon: 'font-awesome',
+					value: 'docs_fontawesome'
+				});
+
+			var toolstack = e(ToolStack,
+				{
+					tools: tools,
+					callbackOnClick: this.onToolBar,
+					icononly: this.state.sidebar_icononly
+				});
+			var sidebar = e('div',
+				{
+					style: 
+					{
+						paddingTop: '5px'
+					}
+				 },
+				[
+					toolbar_icononly,
+					e('div',{ style: { paddingTop: '2px' } }),
+					toolstack]);
 
 			// Assemble the Workspace
 			var workspace = e(Workspace,{
@@ -832,7 +961,7 @@
 				leftbarheader: leftbarheader,
 				treenavigation: treenavigation,
 				content: content,
-				sidebar: null,
+				sidebar: sidebar,
 				status: status 
 			});
 
@@ -846,14 +975,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>318</sys_mod_count>
+        <sys_mod_count>352</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-25 18:30:23</sys_updated_on>
+        <sys_updated_on>2025-04-11 09:27:18</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>

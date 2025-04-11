@@ -5,10 +5,14 @@
 {&#13;
    padding: 5px;&#13;
    vertical-align: top;&#13;
+   border: 2px;&#13;
 }&#13;
 th.ride&#13;
 {&#13;
-   //background-color: lightgrey;&#13;
+    position: sticky;&#13;
+    background-color:  RGB(var(--now-color_background--secondary));&#13;
+    top: 0; /* Stick the header to the top */&#13;
+    z-index: 1; /* Ensure the header stays above table rows */&#13;
 }&#13;
 tr.ride:nth-child(odd) &#13;
 {&#13;
@@ -18,14 +22,14 @@ tr.ride:nth-child(odd) &#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-03 20:44:15</sys_created_on>
         <sys_id>5538405497172110a6a07767f053af26</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>RIDECSS</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>content_css_5538405497172110a6a07767f053af26</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-06 14:51:21</sys_updated_on>
+        <sys_updated_on>2025-01-06 12:13:58</sys_updated_on>
         <type>local</type>
         <url/>
     </content_css>
