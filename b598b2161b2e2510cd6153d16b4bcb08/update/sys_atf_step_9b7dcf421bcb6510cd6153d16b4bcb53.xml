@@ -28,4 +28,5 @@
         <warning_message/>
     </sys_atf_step>
     <sys_variable_value action="delete_multiple" query="document_key=9b7dcf421bcb6510cd6153d16b4bcb53"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_e4b8e71e1bbb5d105b76777d8b4bcb35^id=9b7dcf421bcb6510cd6153d16b4bcb53"/>
 </record_update>
