@@ -112,6 +112,7 @@
 		<li>Added toolbar button to close all open tabs in one go.</li> 
 		<li>In the left-hand navigation tree the section "By Type" is now before "By Table" as it is more likely to be used (based on user experience).</li>
 		<li>The collapsed state of the side bar is now stored per app and user.</li>
+		<li>The link to R-IDE is now added to the link directory in section "IDEs".</li>
 	</ol>
 
 
@@ -164,14 +165,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-21 11:31:19</sys_updated_on>
+        <sys_updated_on>2025-09-17 08:28:50</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
