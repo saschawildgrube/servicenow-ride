@@ -119,6 +119,7 @@
 	{
 		var aTabs = GetArrayValue(state.tabs);
 		var strCurrentTab = GetStringValue(state.currenttab);
+		var bSidebarIconOnly = GetBoolValue(state.sidebar_icononly);
 		if (strCurrentTab == '' && aTabs.length == 0)
 		{
 			strCurrentTab = 'sys_app,'+this.state.app_sys_id;
@@ -127,7 +128,8 @@
 		this.setState(
 			{
 				tabs: aTabs,
-				currenttab: strCurrentTab
+				currenttab: strCurrentTab,
+				sidebar_icononly: bSidebarIconOnly
 			}
 		);
 	}	
@@ -243,7 +245,13 @@
 		{
 			RedirectToUrl('/$studio.do?sysparm_transaction_scope='+this.state.app_data.sys_id,true);
 			return;
-		}								
+		}		
+		if (strValue == 'close_all_tabs')
+		{
+			this.closeAllTabs();
+			return;
+		}			
+
 		if (strValue == 'backgroundscript')
 		{
 			RedirectToUrl('/now/nav/ui/classic/params/target/sys.scripts.modern.do',true);
@@ -292,16 +300,6 @@
 			RedirectToUrl('https://fontawesome.com/v4/icons/',true);
 			return;
 		}	
-		/*
-		if (strValue == 'error')
-		{
-			DoModalMessage(this.title,'Provoking an error...',function(){});
-			this.setState(
-				{
-					state: 'error'
-				});			
-			return;
-		}*/
 
 		if (strValue == 'sidebar_icononly_false')
 		{
@@ -309,6 +307,7 @@
 				{
 					sidebar_icononly: false
 				});			
+			this.updateUserState(this.state.currenttab,this.state.tabs,false);
 			return;
 		}	
 		if (strValue == 'sidebar_icononly_true')
@@ -316,7 +315,8 @@
 			this.setState(
 				{
 					sidebar_icononly: true
-				});			
+				});
+			this.updateUserState(this.state.currenttab,this.state.tabs,true);
 			return;
 		}	
 
@@ -350,7 +350,7 @@
 				tabs: aTabs,
 				state: 'edit'
 			});
-		this.updateUserState(strTab,aTabs);
+		this.updateUserState(strTab,aTabs,this.state.sidebar_icononly);
 	}
 	
 	closeTab(strTabToClose)
@@ -374,7 +374,10 @@
 					currenttab: '',
 					tabs: []
 				});
-			this.updateUserState('',[]);
+			this.updateUserState(
+				'',
+				[],
+				this.state.sidebar_icononly);
 			return;
 		}
 
@@ -387,7 +390,8 @@
 				});
 			this.updateUserState(
 				strCurrentTab,
-				aTabs
+				aTabs,
+				this.state.sidebar_icononly
 			);
 			return;
 		}
@@ -419,10 +423,24 @@
 			});
 		this.updateUserState(
 			strCurrentTab,
-			aTabs);
+			aTabs,
+			this.state.sidebar_icononly);
 	}
 
-	updateUserState(strCurrentTab,aTabs)
+	closeAllTabs()
+	{
+		this.setState(
+			{
+				currenttab: '',
+				tabs: [] 
+			});		
+		this.updateUserState(
+			'',
+			[],
+			this.state.sidebar_icononly);		
+	}
+
+	updateUserState(strCurrentTab,aTabs,bSidebarIconOnly)
 	{
 		ServerRequest(
 			'x_snc_ride.RIDEClientAPI',
@@ -432,7 +450,8 @@
 				state: MakeJson(
 					{
 						currenttab: strCurrentTab,
-						tabs: aTabs
+						tabs: aTabs,
+						sidebar_icononly: bSidebarIconOnly
 					}
 				)
 			},
@@ -495,7 +514,8 @@
 			});
 		this.updateUserState(
 			strTab,
-			aTabs);	
+			aTabs,
+			this.state.sidebar_icononly);	
 	}
 
 	onCommitStart()
@@ -546,7 +566,7 @@
 		else if (strState == 'loading')
 		{
 			this.loadAppData();
-			return e(Fullscreen,{},e(Centered,{},e(Waiting,{ text: 'Loading App...' })));
+			return e(Fullscreen,{},e(Centered,{},e(Waiting,{ text: 'R-IDE is loading the app...' })));
 		}
 		else if (strState == 'edit' || strState == 'create_file')
 		{
@@ -601,14 +621,7 @@
 					icon: 'plus-circle',
 					value: 'file_create'
 				});
-/*
-			tools.push({
-					text: '',
-					tooltip: 'Code Search (via Studio)',
-					icon: 'search',
-					value: 'search'
-				});				
-*/			
+			
 			// Special Application Files
 			if (IsValidSysId(appdata.manual) == true)
 			{
@@ -691,6 +704,16 @@
 						value: 'repo_connect'
 					});									
 			}
+
+			// More
+
+			tools.push({
+				text: '',
+				tooltip: 'Close all open tabs in one go.',
+				icon: 'close',
+				value: 'close_all_tabs'
+			});	
+
 
 
 			var toolbar = e(ToolBar, { tools: tools, callbackOnClick: this.onToolBar });
@@ -975,14 +998,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>352</sys_mod_count>
+        <sys_mod_count>364</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-04-11 09:27:18</sys_updated_on>
+        <sys_updated_on>2025-06-13 15:48:03</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>

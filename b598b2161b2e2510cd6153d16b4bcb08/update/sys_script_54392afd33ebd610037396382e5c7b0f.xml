@@ -21,7 +21,7 @@ This is required because new records are created without a sys_id (not -1).</des
         <is_rest>false</is_rest>
         <message/>
         <name>sys_metadata - i - scope to app scope</name>
-        <order>99999</order>
+        <order>42998</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -51,7 +51,7 @@ This is required because new records are created without a sys_id (not -1).</des
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>54392afd33ebd610037396382e5c7b0f</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>sys_metadata - i - scope to app scope</sys_name>
         <sys_overrides/>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
@@ -59,10 +59,21 @@ This is required because new records are created without a sys_id (not -1).</des
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_54392afd33ebd610037396382e5c7b0f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-07 18:30:30</sys_updated_on>
+        <sys_updated_on>2025-04-30 16:02:39</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=54392afd33ebd610037396382e5c7b0f"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>54392afd33ebd610037396382e5c7b0f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 16:02:22</sys_created_on>
+        <sys_id>4be3a82893d9e610959b7fda2bba10f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 16:02:22</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
