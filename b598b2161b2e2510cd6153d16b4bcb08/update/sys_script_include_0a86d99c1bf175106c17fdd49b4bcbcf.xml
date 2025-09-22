@@ -53,6 +53,8 @@ E.g., the "sys_atf_test" is a primary record, the contained test steps in "sys_a
 		'sys_flow_step_definition',
 		'sys_flow_step_definition_input',
 		'sys_flow_step_definition_output',
+		'sys_hub_step_ext_input',
+		'sys_hub_step_ext_output',
 		'sn_decision_table_decision_condition',
 		'sys_aw_list',
 		'sys_aw_list_attribute',
@@ -88,14 +90,14 @@ E.g., the "sys_atf_test" is a primary record, the contained test steps in "sys_a
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-10-06 09:05:14</sys_created_on>
         <sys_id>0a86d99c1bf175106c17fdd49b4bcbcf</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>GetSecondaryRecordTables</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_0a86d99c1bf175106c17fdd49b4bcbcf</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-20 21:49:18</sys_updated_on>
+        <sys_updated_on>2025-09-22 16:26:52</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
