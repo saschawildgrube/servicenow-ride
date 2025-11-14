@@ -118,6 +118,7 @@
 		<li>Added link "Code Audit" to navigate to the sys_metadata table sorted by last update.</li>
 		<li>Determining the number of uncommitted files is now more performant.</li>
 		<li>Ignoring "cloned" Dictionary Entrîes when loading Application Files. GetAppData() now only considers Application Files which have a non-empty sys_update_name.</li>
+		<li>sys_ui_page is now offered on the left hand tab when creating a new application file.</li>
 		<li>sys_data_policy_rule, sys_hub_step_ext_input, sys_hub_step_ext_output, sys_hub_action_input and sys_ux_page_property are now considered as secondary tables.</li>
 		<li>Fixed a defect that would crash the R-IDE UI if an Application File does not have a display name.</li>
 		<li>Avoiding the page reload if the url does not specify the current scope. A better solution for unintended scope confusion must be found.</li> 
@@ -189,14 +190,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>82</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-13 17:10:01</sys_updated_on>
+        <sys_updated_on>2025-11-14 09:49:30</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
