@@ -26,6 +26,7 @@
 			state: strState,
 			app_sys_id: strAppSysId,
 			app_data: null,
+			app_data_mode: 'filtered',
 			filter: '',
 			currenttab: strCurrentTab,
 			tabs: aTabs,
@@ -67,13 +68,19 @@
 		SetCurrentBrowserUrl(GetRideUrl(strAppSysId));	
 	}
 
-	loadAppData()
+	loadAppData(strMode)
 	{
+		strMode = GetStringValue(strMode);
+		if (strMode == '')
+		{
+			strMode = this.state.app_data_mode;
+		}
 		ServerRequest(
 			'x_snc_ride.RIDEClientAPI',
 			'GetAppData',
 			{
-				app_sys_id: this.state.app_sys_id
+				app_sys_id: this.state.app_sys_id,
+				mode: strMode
 			},
 			this.onServerRequestGetAppData);
 
@@ -163,6 +170,26 @@
 				});			
 			return;
 		}		
+		if (strValue == 'app_refresh_all')
+		{
+			this.loadAppData('all');
+			this.setState(
+				{
+					app_data: null,
+					app_data_mode: 'all'
+				});			
+			return;
+		}			
+		if (strValue == 'app_refresh_filtered')
+		{
+			this.loadAppData('filtered');
+			this.setState(
+				{
+					app_data: null,
+					app_data_mode: 'filtered'
+				});			
+			return;
+		}			
 		if (strValue == 'app_form')
 		{
 			this.openTab('sys_app,'+this.state.app_data.sys_id);
@@ -650,6 +677,24 @@
 					icon: 'refresh',
 					value: 'app_refresh'
 				});				
+			if (this.state.app_data_mode != 'all')
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Show all application files',
+						icon: 'square',
+						value: 'app_refresh_all'
+					});
+			}
+			if (this.state.app_data_mode != 'filtered')
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Hide secondary application files',
+						icon: 'square-o',
+						value: 'app_refresh_filtered'
+					});		
+			}		
 			tools.push({
 					text: 'App Settings',
 					tooltip: 'Open the Custom Application (settings) form.',
@@ -1099,14 +1144,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>387</sys_mod_count>
+        <sys_mod_count>393</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-19 23:27:16</sys_updated_on>
+        <sys_updated_on>2025-12-25 20:40:27</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>
