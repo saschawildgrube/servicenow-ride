@@ -9,7 +9,7 @@
         <mobile_callable>false</mobile_callable>
         <name>GetAppData</name>
         <sandbox_callable>false</sandbox_callable>
-        <script><![CDATA[function GetAppData(vApp)
+        <script><![CDATA[function GetAppData(vApp,strMode)
 {
 	var GetAppRecord = x_snc_devtools.GetAppRecord;
 	var Clone = x_snc_devtools.Clone;
@@ -21,6 +21,7 @@
 	var GetRecord = x_snc_devtools.GetRecord;
 	var GetKeys = x_snc_devtools.GetKeys;
 	var GetValue = x_snc_devtools.GetValue;
+	var IsClonedDictionary = x_snc_devtools.IsClonedDictionary;
 	
 
 	var grApp = GetAppRecord(vApp);
@@ -29,6 +30,13 @@
 		return false;
 	}
 	
+	strMode = GetStringValue(strMode);
+	if (strMode == '')
+	{
+		strMode = 'filtered';
+	}
+
+
 	var appdata = Clone(grApp);
 	
 	appdata.name_clean = GetCleanAppName(appdata.name);
@@ -44,7 +52,11 @@
 		appdata.repo_config_sys_id = GetStringValue(grRepo.sys_id);
 	}	
 	
-	var aIgnoredClasses = GetSecondaryRecordTables();
+	var aIgnoredClasses = [];
+	if (strMode == 'filtered')
+	{
+		aIgnoredClasses = GetSecondaryRecordTables();
+	}
 	
 	var attributes = GetClassAttributes();
 
@@ -85,6 +97,7 @@
 	var grMetaData = new GlideRecord('sys_metadata');
 	grMetaData.orderBy('sys_name');
 	grMetaData.addQuery('sys_scope','=',grApp.sys_id);
+	//grMetaData.addQuery('sys_update_name','!=','');
 	for (var nClass = 0; nClass < aIgnoredClasses.length; nClass++)
 	{
 		grMetaData.addQuery('sys_class_name','!=',aIgnoredClasses[nClass]);
@@ -146,7 +159,21 @@
 			var grRecord = GetRecord(strClassName,metadata.sys_id);
 			var strType = grRecord.getDisplayValue('type');
 			strDisplay = grRecord.name + ' (' + strType + ')'; 
-		}		
+		}	
+		else if (strClassName == 'sn_nowassist_skill_config_status')
+		{
+			var grRecord = GetRecord(strClassName,metadata.sys_id);
+			strDisplay = GetStringValue(grRecord.skill_config.name); 
+		}
+		else if (strClassName == 'sys_generative_ai_config')
+		{
+			var grRecord = GetRecord(strClassName,metadata.sys_id);
+			var strName = GetStringValue(grRecord.name);
+			if (strName != '')
+			{
+				strDisplay = strName;
+			}
+		}
 		else
 		{
 			strDisplay = GetStringValue(grMetaData.getDisplayValue());
@@ -169,9 +196,23 @@
 		}
 		appdata._metadata[metadata.sys_id] = metadata;
 
-		if (strClassName == 'sys_ui_page' && metadata.sys_name == 'manual')
+		if (strClassName == 'sys_ui_page')
 		{
-			appdata.manual = metadata.sys_id;
+			if (GetValue(appdata,'manual') == null)
+			{
+				if (metadata.sys_name == 'manual')
+				{
+					appdata.manual = metadata.sys_id;
+				}
+				else if (metadata.sys_name.indexOf('manual_') == 0)
+				{
+					appdata.manual = metadata.sys_id;
+				}
+				else if (metadata.sys_name.indexOf('_manual') == metadata.sys_name.length - 7)
+				{
+					appdata.manual = metadata.sys_id;
+				}			
+			}
 		}
 		if (strClassName == 'sys_script_include' && metadata.sys_name == 'AppInstall')
 		{
@@ -189,14 +230,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-03 10:19:49</sys_created_on>
         <sys_id>9169bd0c975bed10a6a07767f053af85</sys_id>
-        <sys_mod_count>85</sys_mod_count>
+        <sys_mod_count>100</sys_mod_count>
         <sys_name>GetAppData</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_9169bd0c975bed10a6a07767f053af85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-17 08:42:40</sys_updated_on>
+        <sys_updated_on>2025-12-25 20:30:48</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

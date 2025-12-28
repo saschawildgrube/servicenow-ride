@@ -26,10 +26,11 @@
 			state: strState,
 			app_sys_id: strAppSysId,
 			app_data: null,
+			app_data_mode: 'filtered',
 			filter: '',
 			currenttab: strCurrentTab,
 			tabs: aTabs,
-			uncommittedfiles: null,
+			uncommitted_files_count: null,
 			sidebar_icononly: false
 		};
 
@@ -40,7 +41,7 @@
 
 	onTimer()
 	{
-		this.updateUncommittedFiles();
+		this.updateUncommittedFilesCount();
 	}
 	
 	onOpenApp(strAppSysId)
@@ -60,6 +61,7 @@
 				state: 'edit',
 				app_sys_id: strAppSysId,
 				app_data: null,
+				app_data_mode: 'filtered',
 				filter: '',
 				currenttab: strCurrentTab,
 				tabs: [strCurrentTab]
@@ -67,13 +69,19 @@
 		SetCurrentBrowserUrl(GetRideUrl(strAppSysId));	
 	}
 
-	loadAppData()
+	loadAppData(strMode)
 	{
+		strMode = GetStringValue(strMode);
+		if (strMode == '')
+		{
+			strMode = this.state.app_data_mode;
+		}
 		ServerRequest(
 			'x_snc_ride.RIDEClientAPI',
 			'GetAppData',
 			{
-				app_sys_id: this.state.app_sys_id
+				app_sys_id: this.state.app_sys_id,
+				mode: strMode
 			},
 			this.onServerRequestGetAppData);
 
@@ -134,11 +142,11 @@
 		);
 	}	
 
-	onServerRequestGetAppUncommittedFiles(aFiles)
+	onServerRequestGetAppUncommittedFilesCount(nFiles)
 	{
 		this.setState(
 			{
-				uncommittedfiles: aFiles
+				uncommitted_files_count: nFiles
 			}
 		);
 
@@ -163,6 +171,26 @@
 				});			
 			return;
 		}		
+		if (strValue == 'app_refresh_all')
+		{
+			this.loadAppData('all');
+			this.setState(
+				{
+					app_data: null,
+					app_data_mode: 'all'
+				});			
+			return;
+		}			
+		if (strValue == 'app_refresh_filtered')
+		{
+			this.loadAppData('filtered');
+			this.setState(
+				{
+					app_data: null,
+					app_data_mode: 'filtered'
+				});			
+			return;
+		}			
 		if (strValue == 'app_form')
 		{
 			this.openTab('sys_app,'+this.state.app_data.sys_id);
@@ -273,6 +301,16 @@
 		if (strValue == 'transactions')
 		{
 			RedirectToUrl('/loading_transactions.do',true);
+			return;
+		}		
+		if (strValue == 'logs')
+		{
+			RedirectToUrl('/x_snc_devtools_logs.do',true);
+			return;
+		}		
+		if (strValue == 'code_audit')
+		{
+			RedirectToUrl('/sys_metadata_list.do?sysparm_order=sys_updated_on&sysparm_order_direction=desc',true);
 			return;
 		}		
 		if (strValue == 'access_analyzer')
@@ -458,17 +496,17 @@
 			null);
 	}
 
-	updateUncommittedFiles()
+	updateUncommittedFilesCount()
 	{
 		if (this.state.app_sys_id != null)
 		{
 			ServerRequest(
 				'x_snc_devtools.DevToolsClientAPI',
-				'GetAppUncommittedFiles',
+				'GetAppUncommittedFilesCount',
 				{
 					app_sys_id: this.state.app_sys_id
 				},
-				this.onServerRequestGetAppUncommittedFiles);
+				this.onServerRequestGetAppUncommittedFilesCount);
 		}
 	}
 
@@ -487,7 +525,7 @@
 
 	onTabNavigation(strUrl,strName)
 	{
-		if (strUrl.indexOf('ride_scope=') == -1)
+		/*if (strUrl.indexOf('ride_scope=') == -1)
 		{
 			strUrl += '&ride_scope=' + this.state.app_sys_id;
 			var elements = document.getElementsByName(strName);
@@ -496,7 +534,7 @@
 			{
 				element.src = strUrl;
 			}
-		}
+		}*/
 	}
 
 	onCreateFileComplete(record)
@@ -539,6 +577,37 @@
 		{
 			strUrl = StringReplace(strUrl,'{sys_id}',strSysId);
 		}
+		RedirectToUrl(strUrl,true);
+	}
+
+	onButtonOpenFlowStructure(strValue)
+	{
+		var aValue = strValue.split(',');
+		var strClassName = GetValue(aValue,0);
+		var strSysId = GetValue(aValue,1);
+
+		var strUrl = '/x_snc_devtools_flow.do?flow=' + strSysId;
+		RedirectToUrl(strUrl,true);
+	}
+
+	onButtonOpenRelatedRecords(strValue)
+	{
+		var aValue = strValue.split(',');
+		var strClassName = GetValue(aValue,0);
+		var strSysId = GetValue(aValue,1);
+
+		var strUrl = '/x_snc_devtools_related_records.do?record=' + strSysId + '&table='+strClassName;
+		RedirectToUrl(strUrl,true);
+	}	
+
+	onButtonOpenXml(strValue)
+	{
+		var aValue = strValue.split(',');
+		var strClassName = GetValue(aValue,0);
+		var strSysId = GetValue(aValue,1);
+
+		var metadata = this.state.app_data._metadata;
+		var strUrl = strUrl = '/'+strClassName+'.do?sys_id='+strSysId + '&XML=';
 		RedirectToUrl(strUrl,true);
 	}
 
@@ -609,6 +678,24 @@
 					icon: 'refresh',
 					value: 'app_refresh'
 				});				
+			if (this.state.app_data_mode != 'all')
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Show all application files',
+						icon: 'square',
+						value: 'app_refresh_all'
+					});
+			}
+			if (this.state.app_data_mode != 'filtered')
+			{
+				tools.push({
+						text: '',
+						tooltip: 'Hide secondary application files',
+						icon: 'square-o',
+						value: 'app_refresh_filtered'
+					});		
+			}		
 			tools.push({
 					text: 'App Settings',
 					tooltip: 'Open the Custom Application (settings) form.',
@@ -666,8 +753,8 @@
 						icon: 'cogs',
 						value: 'repo_config'
 					});			
-				var aUncommittedFiles = GetArrayValue(this.state.uncommittedfiles);
-				if (aUncommittedFiles.length > 0)
+				var nUncommittedFilesCount = GetIntegerValue(this.state.uncommitted_files_count);
+				if (nUncommittedFilesCount > 0)
 				{
 					tools.push({
 							text: '',
@@ -795,6 +882,27 @@
 
 						if (GetValue(file,'_attributes','separate_browser_tab') == true)
 						{
+							var flowlink = null;
+							if (strClassName == 'sys_hub_flow')
+							{
+								flowlink = e(Button,
+									{
+										text: 'Show Flow Structure',
+										value: strCurrentTab,
+										callbackOnClick: this.onButtonOpenFlowStructure,
+										style: {}
+									});
+							}
+
+							var relatedrecordslink = null;
+							relatedrecordslink = e(Button,
+									{
+										text: 'Show Related Records',
+										value: strCurrentTab,
+										callbackOnClick: this.onButtonOpenRelatedRecords,
+										style: {}
+									});
+				
 							tabcontent =
 								[
 									e(Centered,{},
@@ -805,9 +913,36 @@
 												value: strCurrentTab,
 												callbackOnClick: this.onButtonOpenInNewBrowserTab,
 												style: {}
-											})
+											}),
+											e('div',{
+												style: 
+												{
+													paddingTop: '5px'
+												}
+											},null),
+											flowlink,
+											e('div',{
+												style: 
+												{
+													paddingTop: '5px'
+												}
+											},null),
+											relatedrecordslink,							
+											e('div',{
+												style: 
+												{
+													paddingTop: '5px'
+												}
+											},null),										
+											e(Button,{
+												text: 'Open XML',
+												value: strCurrentTab,
+												callbackOnClick: this.onButtonOpenXml,
+												style: {}
+											}),
+
 										]
-									)
+									)									
 								];
 						}
 
@@ -856,10 +991,10 @@
 			// Status Bar
 			var strStatus = strAppNameVersion;
 
-			var aUncommittedFiles = GetArrayValue(this.state.uncommittedfiles);
-			if (aUncommittedFiles.length > 0)
+			var nUncommittedFilesCount = GetIntegerValue(this.state.uncommitted_files_count);
+			if (nUncommittedFilesCount > 0)
 			{
-				strStatus += ' - ' + aUncommittedFiles.length + ' uncommitted file(s)';
+				strStatus += ' - ' + nUncommittedFilesCount + ' uncommitted file(s)';
 			}
 			if (this.state.app_data.branch != '')
 			{
@@ -923,7 +1058,19 @@
 					tooltip: 'Show all active transactions on all nodes of the instance',
 					icon: 'tasks',
 					value: 'transactions'
-				});						
+				});		
+			tools.push({
+					text: 'Logs',
+					tooltip: 'Show various logs',
+					icon: 'archive',
+					value: 'logs'
+				});		
+			tools.push({
+					text: 'Code Audit',
+					tooltip: 'Show latest code changes',
+					icon: 'truck',
+					value: 'code_audit'
+				});													
 			tools.push({
 					text: 'Access Analyzer',
 					tooltip: 'Analyse access based on users, groups and roles to various assets',
@@ -998,14 +1145,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>364</sys_mod_count>
+        <sys_mod_count>394</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-13 15:48:03</sys_updated_on>
+        <sys_updated_on>2025-12-26 15:39:56</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>
