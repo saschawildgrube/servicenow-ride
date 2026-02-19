@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>The R-IDE Developer has access to the the R-IDE user interface. Access to applications and application files is controlled by the usual platform mechanisms.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>BFlPDm19HbL7ejMzdfaB5QA3je7U5MVssNszs1AHI/g=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_ride.developer</name>
