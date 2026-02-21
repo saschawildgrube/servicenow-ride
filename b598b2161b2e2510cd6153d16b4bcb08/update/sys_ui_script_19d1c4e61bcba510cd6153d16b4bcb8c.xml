@@ -338,6 +338,11 @@
 			RedirectToUrl('https://fontawesome.com/v4/icons/',true);
 			return;
 		}	
+		if (strValue == 'devtools_manual')
+		{
+			RedirectToUrl('/now/nav/ui/classic/params/target/x_snc_devtools_manual.do',true);
+			return;
+		}			
 		if (strValue == 'devtools_html_gallery')
 		{
 			RedirectToUrl('/now/nav/ui/classic/params/target/x_snc_devtools_gallery.do',true);
@@ -1109,6 +1114,12 @@
 					value: 'docs_fontawesome'
 				});
 			tools.push({
+					text: 'DevTools Mnaual',
+					tooltip: 'DevTools Manual with documentation of all contained Script Includes, UI Scripts and other capabilities relevant for Developers.',
+					icon: 'cubes',
+					value: 'devtools_manual'
+				});	
+			tools.push({
 					text: 'HTML Gallery',
 					tooltip: 'DevTools HTML Gallery with code examples',
 					icon: 'code',
@@ -1156,14 +1167,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 09:47:59</sys_created_on>
         <sys_id>19d1c4e61bcba510cd6153d16b4bcb8c</sys_id>
-        <sys_mod_count>397</sys_mod_count>
+        <sys_mod_count>399</sys_mod_count>
         <sys_name>x_snc_ride.RIDEController</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_script_19d1c4e61bcba510cd6153d16b4bcb8c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-19 21:06:25</sys_updated_on>
+        <sys_updated_on>2026-02-21 14:54:19</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
         <x_snc_devtools_global>false</x_snc_devtools_global>
