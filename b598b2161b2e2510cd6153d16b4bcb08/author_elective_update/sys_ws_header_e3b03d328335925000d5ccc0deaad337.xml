@@ -20,7 +20,7 @@
     </sys_ws_header>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</application>
+        <application display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</application>
         <file_path/>
         <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
         <instance_name>wildyokohama</instance_name>
@@ -73,10 +73,10 @@
         <sys_metadata>e3b03d328335925000d5ccc0deaad337</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
-        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_scope_delete display_value="">2a091410ba074d5883e73b1420808590</sys_scope_delete>
         <sys_update_name>sys_ws_header_e3b03d328335925000d5ccc0deaad337</sys_update_name>
         <sys_update_version display_value="sys_ws_header_e3b03d328335925000d5ccc0deaad337">174dc1fc2bafaa109083fe395e91bf0f</sys_update_version>
