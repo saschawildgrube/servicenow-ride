@@ -156,9 +156,9 @@
         <sys_id>525625bd831eda5000d5ccc0deaad387</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>RIDEAppOpenController</sys_name>
-        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>x_snc_reactor_component_525625bd831eda5000d5ccc0deaad387</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-12-24 16:06:40</sys_updated_on>
