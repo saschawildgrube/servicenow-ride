@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="DELETE">
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <compiled_handbook/>
+        <description/>
+        <external_agent_configuration/>
+        <instructions/>
+        <internal_name/>
+        <name/>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- No core domain or expertise can be attributed to the agent due to the absence of ROLE information.
+- The agent is capable of utilizing the tool named 'ATF Agent 1 - ATF Tool 1', but the specific actions, procedures, or outcomes enabled by this tool cannot be determined due to the lack of description and input details.</proficiency>
+        <record_type>custom</record_type>
+        <role/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 03:59:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b828b9893bab3e5062bf612c95e45a2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_update_name>sn_aia_agent_b828b9893bab3e5062bf612c95e45a2a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 03:59:51</sys_updated_on>
+    </sn_aia_agent>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</application>
+        <file_path/>
+        <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
+        <instance_name>wildyokohama</instance_name>
+        <name>sn_aia_agent_b828b9893bab3e5062bf612c95e45a2a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_agent"&gt;&lt;sn_aia_agent action="INSERT_OR_UPDATE"&gt;&lt;agent_type&gt;internal&lt;/agent_type&gt;&lt;applicability_script&gt;&lt;![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]&gt;&lt;/applicability_script&gt;&lt;compiled_handbook/&gt;&lt;description/&gt;&lt;external_agent_configuration/&gt;&lt;instructions/&gt;&lt;internal_name/&gt;&lt;name/&gt;&lt;parent/&gt;&lt;post_processing_message/&gt;&lt;processing_message/&gt;&lt;proficiency&gt;- No core domain or expertise can be attributed to the agent due to the absence of ROLE information.
+- The agent is capable of utilizing the tool named 'ATF Agent 1 - ATF Tool 1', but the specific actions, procedures, or outcomes enabled by this tool cannot be determined due to the lack of description and input details.&lt;/proficiency&gt;&lt;record_type&gt;custom&lt;/record_type&gt;&lt;role/&gt;&lt;source_id/&gt;&lt;strategy display_value="ReAct"&gt;f0bff21f9f13c6108f431597d90a1c74&lt;/strategy&gt;&lt;sys_class_name&gt;sn_aia_agent&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-03-09 03:59:51&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;b828b9893bab3e5062bf612c95e45a2a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide"&gt;b598b2161b2e2510cd6153d16b4bcb08&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="R-IDE WORK IN PROGRESS"&gt;b598b2161b2e2510cd6153d16b4bcb08&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_agent_b828b9893bab3e5062bf612c95e45a2a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-03-09 03:59:51&lt;/sys_updated_on&gt;&lt;/sn_aia_agent&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1740444750</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>d0c16ad63b30661062bf612c95e45a50</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 03:59:51</sys_created_on>
+        <sys_id>b6283d893bab3e5062bf612c95e45ab9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19cd0c055d00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 03:59:51</sys_updated_on>
+        <type>AI Agent</type>
+        <update_guid>72283d8952ab3e5041b4af8d935086b8</update_guid>
+        <update_guid_history>72283d8952ab3e5041b4af8d935086b8:1740444750</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">f83113f12b23b6909083fe395e91bf1b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-11 18:24:17</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent">sn_aia_agent</sys_db_object>
+        <sys_id>5da2a4d4935c4664beea7a110f292644</sys_id>
+        <sys_metadata>b828b9893bab3e5062bf612c95e45a2a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope_delete display_value="">2a091410ba074d5883e73b1420808590</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_b828b9893bab3e5062bf612c95e45a2a</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_b828b9893bab3e5062bf612c95e45a2a">b6283d893bab3e5062bf612c95e45ab9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-11 18:24:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

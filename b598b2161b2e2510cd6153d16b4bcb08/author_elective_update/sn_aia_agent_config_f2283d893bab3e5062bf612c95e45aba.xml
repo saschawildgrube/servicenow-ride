@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_config">
+    <sn_aia_agent_config action="DELETE">
+        <active>true</active>
+        <agent display_value="">b828b9893bab3e5062bf612c95e45a2a</agent>
+        <doc_url/>
+        <icon_url/>
+        <public>false</public>
+        <run_as_user/>
+        <sys_class_name>sn_aia_agent_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 03:59:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f2283d893bab3e5062bf612c95e45aba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_update_name>sn_aia_agent_config_f2283d893bab3e5062bf612c95e45aba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 03:59:51</sys_updated_on>
+    </sn_aia_agent_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</application>
+        <file_path/>
+        <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
+        <instance_name>wildyokohama</instance_name>
+        <name>sn_aia_agent_config_f2283d893bab3e5062bf612c95e45aba</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_config"><sn_aia_agent_config action="INSERT_OR_UPDATE"><active>true</active><agent display_value="">b828b9893bab3e5062bf612c95e45a2a</agent><doc_url/><icon_url/><public>false</public><run_as_user/><sys_class_name>sn_aia_agent_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-03-09 03:59:51</sys_created_on><sys_domain>global</sys_domain><sys_id>f2283d893bab3e5062bf612c95e45aba</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package><sys_policy/><sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope><sys_update_name>sn_aia_agent_config_f2283d893bab3e5062bf612c95e45aba</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-03-09 03:59:51</sys_updated_on></sn_aia_agent_config></record_update>]]></payload>
+        <payload_hash>-64501007</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>d0c16ad63b30661062bf612c95e45a50</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-09 03:59:51</sys_created_on>
+        <sys_id>32283d893bab3e5062bf612c95e45acb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19cd0c055fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-09 03:59:51</sys_updated_on>
+        <type>AI Agent Config</type>
+        <update_guid>f6283d8955ab3e50bb21aabc119094c9</update_guid>
+        <update_guid_history>f6283d8955ab3e50bb21aabc119094c9:-64501007</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">87219fb12b23b6909083fe395e91bf52</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-11 18:24:09</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent_config">sn_aia_agent_config</sys_db_object>
+        <sys_id>57b246edb27b454eb81e73d49bcba8e4</sys_id>
+        <sys_metadata>f2283d893bab3e5062bf612c95e45aba</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope_delete display_value="">2a091410ba074d5883e73b1420808590</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_config_f2283d893bab3e5062bf612c95e45aba</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_config_f2283d893bab3e5062bf612c95e45aba">32283d893bab3e5062bf612c95e45acb</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-11 18:24:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
