@@ -114,6 +114,9 @@
 		<li>knowledge_based_question_answer_mapping is now considered as a secondary table.</li>
 		<li>knowledge_based_question_service_mapping is now considered as a secondary table.</li>
 		<li>ais_semantic_search_embedding_model_configuration is now considered as a secondary table.</li>
+		<li>sys_one_extend_capability_definition is now considered as a secondary table.</li>
+		<li>sys_one_extend_definition_attribute is now considered as a secondary table.</li>
+		<li>sys_one_extend_definition_config is now considered as a secondary table.</li>
 	</ol>
 
 
@@ -214,14 +217,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-28 11:00:29</sys_created_on>
         <sys_id>e229cf4e1b8b6510cd6153d16b4bcb51</sys_id>
-        <sys_mod_count>107</sys_mod_count>
+        <sys_mod_count>109</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_ui_page_e229cf4e1b8b6510cd6153d16b4bcb51</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-24 14:23:03</sys_updated_on>
+        <sys_updated_on>2026-03-25 15:19:22</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>e229cf4e1b8b6510cd6153d16b4bcb51</id>
