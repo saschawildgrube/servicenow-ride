@@ -114,7 +114,8 @@
 
 		metadata._attributes = GetValue(attributes,strClassName);
 
-		var strDisplay = '';
+		var strDisplay = GetStringValue(grMetaData.getDisplayValue());
+
 		if (strClassName == 'sys_security_acl')
 		{
 			var grRecord = GetRecord(strClassName,metadata.sys_id);
@@ -174,13 +175,24 @@
 				strDisplay = strName;
 			}
 		}
-		else
+		else if (strClassName == 'sn_aia_agent_tool_m2m')
 		{
-			strDisplay = GetStringValue(grMetaData.getDisplayValue());
-			if (strDisplay == '')
+			var grRecord = GetRecord(strClassName,metadata.sys_id);
+			var grAgent = GetRecord('sn_aia_agent',grRecord.agent);
+			var grTool = GetRecord('sn_aia_tool',grRecord.tool);
+
+			var strToolName = GetStringValue(grTool.name);
+			var strAgentName = GetStringValue(grAgent.name);
+
+			if (strToolName != '' && strAgentName != '')
 			{
-				strDisplay = grMetaData.getValue('sys_id');
+				strDisplay = strAgentName + ' - ' + strToolName;
 			}
+		}
+		
+		if (strDisplay == '')
+		{
+			strDisplay = grMetaData.getValue('sys_id');
 		}
 		metadata.display = strDisplay;
 		
@@ -230,14 +242,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-03 10:19:49</sys_created_on>
         <sys_id>9169bd0c975bed10a6a07767f053af85</sys_id>
-        <sys_mod_count>100</sys_mod_count>
+        <sys_mod_count>101</sys_mod_count>
         <sys_name>GetAppData</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_9169bd0c975bed10a6a07767f053af85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-25 20:30:48</sys_updated_on>
+        <sys_updated_on>2026-04-15 14:18:26</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
