@@ -224,7 +224,7 @@
 				strDisplay = strParentName + ' - ' + strVersionName;
 			}
 		}		
-		else if (strClassName == 'catalog_script_client')
+		else if (strClassName == 'catalog_script_client' || strClassName == 'catalog_ui_policy')
 		{
 			var grRecord = GetRecord(strClassName,metadata.sys_id);
 			var grParent = GetParentRecord(strClassName,metadata.sys_id);
@@ -296,14 +296,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-03 10:19:49</sys_created_on>
         <sys_id>9169bd0c975bed10a6a07767f053af85</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>116</sys_mod_count>
         <sys_name>GetAppData</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_9169bd0c975bed10a6a07767f053af85</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-19 08:07:55</sys_updated_on>
+        <sys_updated_on>2026-04-19 08:26:43</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
