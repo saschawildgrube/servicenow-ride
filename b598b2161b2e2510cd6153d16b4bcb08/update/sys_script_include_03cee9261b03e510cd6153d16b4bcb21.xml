@@ -32,10 +32,11 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 	GetAppData: function()
 	{
 		var MakeJson = x_snc_devtools.MakeJson;
-		var GetStringValue = x_snc_devtools.GetStringValue;
+		var GetParam = x_snc_devtools.GetParam;
+		var IsValidSysId = x_snc_devtools.IsValidSysId;
 
-		var strAppSysId = GetStringValue(this.getParameter('sysparm_app_sys_id'));
-		var strMode = GetStringValue(this.getParameter('sysparm_mode'));
+		var strAppSysId = GetParam('app_sys_id',IsValidSysId);
+		var strMode = GetParam('sysparm_mode');
 		var appdata = GetAppData(strAppSysId,strMode);
 		return MakeJson(appdata);
 	},
@@ -49,34 +50,38 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 
 	CreateAppFile: function()
 	{
-		var GetStringValue = x_snc_devtools.GetStringValue;
+		var GetParam = x_snc_devtools.GetParam;
+		var IsValidSysId = x_snc_devtools.IsValidSysId;
 		var Clone = x_snc_devtools.Clone;
 		var MakeJson = x_snc_devtools.MakeJson;
 		
-		var strAppSysId = GetStringValue(this.getParameter('sysparm_app_sys_id'));		
-		var strClassName = GetStringValue(this.getParameter('sysparm_class_name'));		
+		var strAppSysId = GetParam('app_sys_id',IsValidSysId);
+		var strClassName = GetParam('class_name');		
 		var grRecord = CreateAppFile(strAppSysId,strClassName);
 		return MakeJson(grRecord);
 	},
 
 	AppCreate: function()
 	{
-		var GetStringValue = x_snc_devtools.GetStringValue;
-		
-		var strAppName = GetStringValue(this.getParameter('sysparm_app_name'));		
-		var strAppType = GetStringValue(this.getParameter('sysparm_app_type'));
-		var strAppScope = GetStringValue(this.getParameter('sysparm_app_scope'));	
+		var GetParam = x_snc_devtools.GetParam;
+		var IsValidScope = x_snc_devtools.IsValidScope;
+
+		var strAppName = GetParam('app_name');		
+		var strAppType = GetParam('app_type');
+		var strAppScope = GetParam('app_scope',IsValidScope);	
 		var strAppSysId = x_snc_devtools.AppCreate(strAppName,strAppType,strAppScope);
 		return strAppSysId;
 	},	
 
 	SetUserState: function()
 	{
+		var GetParam = x_snc_devtools.GetParam;
+		var IsValidSysId = x_snc_devtools.IsValidSysId;
 		var GetStringValue = x_snc_devtools.GetStringValue;
 		var ParseJson = x_snc_devtools.ParseJson;
 
-		var strAppSysId = GetStringValue(this.getParameter('sysparm_app_sys_id'));		
-		var strState = GetStringValue(this.getParameter('sysparm_state'));
+		var strAppSysId = GetParam('app_sys_id',IsValidSysId);		
+		var strState = GetParam('state');
 		var strUserSysId = GetStringValue(gs.getUserID());
 		var state = ParseJson(strState); 
 
@@ -85,10 +90,12 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 
 	GetUserState: function()
 	{
+		var GetParam = x_snc_devtools.GetParam;
+		var IsValidSysId = x_snc_devtools.IsValidSysId;		
 		var GetStringValue = x_snc_devtools.GetStringValue;
 		var MakeJson = x_snc_devtools.MakeJson;
 
-		var strAppSysId = GetStringValue(this.getParameter('sysparm_app_sys_id'));		
+		var strAppSysId = GetParam('app_sys_id',IsValidSysId);			
 		var strUserSysId = GetStringValue(gs.getUserID());
 
 		return MakeJson(GetUserState(strUserSysId, strAppSysId));
@@ -100,14 +107,14 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 17:43:11</sys_created_on>
         <sys_id>03cee9261b03e510cd6153d16b4bcb21</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>RIDEClientAPI</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_03cee9261b03e510cd6153d16b4bcb21</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-12-25 20:31:11</sys_updated_on>
+        <sys_updated_on>2026-09-14 10:26:01</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
