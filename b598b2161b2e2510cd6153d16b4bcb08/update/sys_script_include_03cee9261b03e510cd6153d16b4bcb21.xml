@@ -31,12 +31,12 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 	
 	GetAppData: function()
 	{
-		var MakeJson = x_snc_devtools.MakeJson;
 		var GetParam = x_snc_devtools.GetParam;
 		var IsValidSysId = x_snc_devtools.IsValidSysId;
+		var MakeJson = x_snc_devtools.MakeJson;
 
 		var strAppSysId = GetParam('app_sys_id',IsValidSysId);
-		var strMode = GetParam('sysparm_mode');
+		var strMode = GetParam('mode');
 		var appdata = GetAppData(strAppSysId,strMode);
 		return MakeJson(appdata);
 	},
@@ -65,11 +65,12 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 	{
 		var GetParam = x_snc_devtools.GetParam;
 		var IsValidScope = x_snc_devtools.IsValidScope;
+		var AppCreate = x_snc_devtools.AppCreate;
 
 		var strAppName = GetParam('app_name');		
 		var strAppType = GetParam('app_type');
 		var strAppScope = GetParam('app_scope',IsValidScope);	
-		var strAppSysId = x_snc_devtools.AppCreate(strAppName,strAppType,strAppScope);
+		var strAppSysId = AppCreate(strAppName,strAppType,strAppScope);
 		return strAppSysId;
 	},	
 
@@ -107,14 +108,14 @@ RIDEClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-29 17:43:11</sys_created_on>
         <sys_id>03cee9261b03e510cd6153d16b4bcb21</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>RIDEClientAPI</sys_name>
         <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
         <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_03cee9261b03e510cd6153d16b4bcb21</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-14 10:26:01</sys_updated_on>
+        <sys_updated_on>2026-09-14 10:57:52</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
