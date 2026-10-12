@@ -46,9 +46,9 @@
         <sys_id>ffe4ebc883de925000d5ccc0deaad3fb</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>GetUserState</sys_name>
-        <sys_package display_value="R-IDE" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
+        <sys_package display_value="R-IDE WORK IN PROGRESS" source="x_snc_ide">b598b2161b2e2510cd6153d16b4bcb08</sys_package>
         <sys_policy/>
-        <sys_scope display_value="R-IDE">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
+        <sys_scope display_value="R-IDE WORK IN PROGRESS">b598b2161b2e2510cd6153d16b4bcb08</sys_scope>
         <sys_update_name>sys_script_include_ffe4ebc883de925000d5ccc0deaad3fb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-12-13 13:42:22</sys_updated_on>
