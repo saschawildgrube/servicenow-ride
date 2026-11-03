@@ -23,6 +23,7 @@
         <scope>x_snc_ride</scope>
         <scoped_administration>false</scoped_administration>
         <short_description>R-IDE is the React-based IDE (as in "Integrated Development Environment") - the ultimate Studio alternative.</short_description>
+        <sn_managed>false</sn_managed>
         <source>x_snc_ide</source>
         <store_correlation_id/>
         <store_url/>
